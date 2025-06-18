@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Image } from '@imagekit/react';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -7,7 +8,12 @@ const Navbar = () => {
     <div className="w-full h-16 md:h-20 flex items-center justify-between">
       {/* Logo */}
       <div className="flex items-center gap-4 text-2xl font-bold">
-        <img src="/logo.png" alt="logo" className="w-8 h-8" />
+        <Image
+        urlEndpoint={import.meta.env.VITE_IK_URL_ENDPOINT}
+          src="/logo.png"
+          alt="logo"
+          className="w-8 h-8"
+        />
         <span>mernlog</span>
       </div>
       {/* Mobile Menu */}
